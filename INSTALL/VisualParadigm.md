@@ -1,2 +1,0 @@
-Installazione di Visual Paradigm
-===
