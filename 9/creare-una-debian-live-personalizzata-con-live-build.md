@@ -1,8 +1,14 @@
 # Creare una Debian Live personalizzata con live build
+- [Riferimento](https://francoconidi.it/creare-una-debian-live-personalizzata-con-live-build/)
 
 Metodo per costruirsi una propria distribuzione Linux personalizzata basata su Debian basata su [debootstrap](https://wiki.debian.org/Debootstrap).
 Leggere prima la documentazione su [live-config](https://manpages.debian.org/jessie/live-config-doc/live-config.7.en.html), e [live-build](https://manpages.debian.org/stretch/live-build/live-build.7.en.html).
+
+Alcuni esempi di config:
+- [Parrot](https://nest.parrotsec.org/parrot-build/parrot-build/blob/master/auto/config)
+- https://gist.github.com/detly/54e07c56f68b9d2ed066
 ```
+# apt install -y debootstrap grub-common grub-pc-bin grub-efi-amd64-bin efibootmgr syslinux squashfs-tools live-build live-tools live-boot
 $ mkdir live; cd live
 $ lb config --distribution stretch --binary-images iso-hybrid --architectures amd64 --archive-areas "main contrib non-free" --debian-installer-gui "true" debian-installer "live" --mirror-bootstrap https://ftp.it.debian.org/debian/ --mirror-binary https://ftp.it.debian.org/debian --bootappend-live "boot=live components timezone=Europe/Rome locales=en_GB.UTF-8 keyboard-layouts=it hostname=Debian-Custom username=user noeject autologin"
 ```
