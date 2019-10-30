@@ -2,7 +2,7 @@
 
 [Riferimento](https://nitstorm.github.io/blog/disabling-touchpad-laptop-linux/)
 
-```bash
+```
 # apt update
 # apt install xinput
 ```
